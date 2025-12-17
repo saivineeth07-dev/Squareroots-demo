@@ -11,20 +11,20 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'python -m pip install --upgrade pip'
-                sh 'pip install -r requirements.txt'
+                bat 'python -m pip install --upgrade pip'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest'
+                bat 'pytest'
             }
         }
 
         stage('Run Application') {
             steps {
-                sh 'Annotation.py'
+                bat 'Annotation.py'
             }
         }
     }
