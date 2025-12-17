@@ -18,7 +18,14 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'pytest'
+                script {
+                    def status = bat(script: 'pytest', returnStatus: true)
+                    if (status == 5) {
+                        echo 'No tests found. Continuing pipeline.'
+                    } else if (status != 0) {
+                        error 'Tests failed'
+                    }
+                }
             }
         }
 
