@@ -33,6 +33,11 @@ pipeline {
                 bat 'python --version'
             }
         }
+        stage('Run Tests') {
+            steps {
+                bat 'pytest'
+            }
+        }
     }
 
     post {
