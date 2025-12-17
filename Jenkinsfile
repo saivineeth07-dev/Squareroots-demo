@@ -27,6 +27,12 @@ pipeline {
                 bat 'Annotation.py'
             }
         }
+        stage('Verify Python') {
+           steps {
+                bat 'where python'
+                bat 'python --version'
+            }
+        }
     }
 
     post {
