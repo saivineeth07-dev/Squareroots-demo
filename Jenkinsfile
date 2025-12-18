@@ -53,6 +53,7 @@ pipeline {
     post {
         success {
             echo 'Build Successful (CI-safe)'
+            archiveArtifacts artifacts: 'images/*.jpg'
         }
         failure {
             echo 'Build Failed'
