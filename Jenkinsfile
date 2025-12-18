@@ -77,6 +77,12 @@ pipeline {
                 }
             }
         }
+
+        stage('Validate Script Imports') {
+            steps {
+                bat '%VENV%\\Scripts\\python -c "import cv2; print(cv2.__version__)"'
+            }
+        }
     }
 
     post {
