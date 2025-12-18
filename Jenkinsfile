@@ -45,7 +45,7 @@ pipeline {
 
         stage('CI Validation (NO GUI)') {
             steps {
-                bat 'venv\\Scripts\\python Annotation.py'
+                bat 'venv\\Scripts\\python -m app.main'
             }
         }
     }
