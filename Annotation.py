@@ -11,6 +11,7 @@ def main():
     else:
         # Local mode → show window
         cv2.imshow("grayscale image", gray)
+        cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\dog_gray.jpg", gray)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
