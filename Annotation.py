@@ -7,7 +7,7 @@ def main():
 
     if os.getenv("CI") == "true":
         # CI mode → save output instead of showing
-        cv2.imwrite("output_gray.jpg", gray)
+        cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\output_gray.jpg", gray)
     else:
         # Local mode → show window
         cv2.imshow("grayscale image", gray)
