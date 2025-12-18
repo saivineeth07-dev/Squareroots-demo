@@ -2,7 +2,7 @@ import cv2
 import os
 
 def main():
-    img = cv2.imread("sample.jpg")
+    img = cv2.imread(r"C:\Users\saivi\Downloads\Dog.jpg")
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     if os.getenv("CI") == "true":
