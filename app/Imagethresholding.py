@@ -9,7 +9,6 @@ def main():
     # Basic threshold example 
     th, dst = cv2.threshold(src, 0, 255, cv2.THRESH_BINARY); 
     if os.getenv("CI") == "true":
-       # cv2.imshow('Basic_Threshold', dst)
         cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\opencv-threshold-numbers-example.jpg", dst)
     else:
         cv2.imshow('Basic_Threshold', dst)
