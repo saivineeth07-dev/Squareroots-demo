@@ -1,38 +1,18 @@
 import cv2
+import os
 
 def main():
-    # your existing code
-    # Load an image
-    #img3 = r"C:\Users\saivi\Downloads\1763558003543.jpg"
-    #img2 = cv2.imread(r"C:\Users\saivi\Downloads\1763558003543.jpg")
+    img = cv2.imread("sample.jpg")
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Display the image
-    #cv2.imshow("My Image", img2)
-    #cv2.waitKey(0)
-    #cv2.destroyAllWindows()
-
-    # The function cv2.imread() is used to read an image.
-    img_grayscale = cv2.imread(r"C:\Users\saivi\Downloads\1763558003543.jpg",0)
-        
-    # The function cv2.imshow() is used to display an image in a window.
-    cv2.imshow('grayscale image',img_grayscale)
-        
-    # waitKey() waits for a key press to close the window and 0 specifies indefinite loop
-    #cv2.waitKey(0)
-        
-    # cv2.destroyAllWindows() simply destroys all the windows we created.
-    #cv2.destroyAllWindows()
-        
-    # The function cv2.imwrite() is used to write an image.
-    rgb = cv2.cvtColor(img_grayscale, cv2.COLOR_BGR2RGB)
-    cv2.imshow('converted Image',rgb)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-    cv2.imwrite('grayscale.jpg',img_grayscale)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    pass
+    if os.getenv("CI") == "true":
+        # CI mode → save output instead of showing
+        cv2.imwrite("output_gray.jpg", gray)
+    else:
+        # Local mode → show window
+        cv2.imshow("grayscale image", gray)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
-
