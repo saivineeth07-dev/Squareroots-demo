@@ -38,7 +38,7 @@ pipeline {
                     if (status == 5) {
                         echo 'No tests found. Continuing.'
                     } else if (status != 0) {
-                        error "Python script failed with exit code ${status}"
+                        error 'Tests failed'
                     }
                 }
             }
@@ -54,7 +54,6 @@ pipeline {
             steps {
                 bat 'echo WORKSPACE=%WORKSPACE%'
                 bat 'python app\\main.py'
-            //    bat 'venv\\Scripts\\python app\\main.py'
             }
         }
 
