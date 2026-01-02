@@ -48,6 +48,13 @@ pipeline {
                 bat 'venv\\Scripts\\python -m app.main'
             }
         }
+
+        stage('Run OpenCV') {
+            steps {
+                bat 'echo WORKSPACE=%WORKSPACE%'
+                bat 'python main.py'
+            }
+        }
     }
 
     post {
