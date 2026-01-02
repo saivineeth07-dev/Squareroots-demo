@@ -34,7 +34,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    def status = bat(script: 'venv\\Scripts\\pytest', returnStatus: true)
+                    def status = bat(script: 'venv\\Scripts\\pytest')
                     if (status == 5) {
                         echo 'No tests found. Continuing.'
                     } else if (status != 0) {
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 bat 'echo WORKSPACE=%WORKSPACE%'
                 bat 'python app\\main.py'
-                bat 'venv\\Scripts\\python app\\main.py'
+            //    bat 'venv\\Scripts\\python app\\main.py'
             }
         }
 
