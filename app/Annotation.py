@@ -2,12 +2,10 @@ import cv2
 import os
 import sys
 
-workspace = os.getenv("WORKSPACE")
-print("WORKSPACE =", workspace)
+print("Application started")
 
-if not workspace:
-    print("ERROR: WORKSPACE not set")
-    sys.exit(1)
+workspace = os.getenv("WORKSPACE", os.getcwd())
+print("WORKSPACE =", workspace)
 
 output_dir = os.path.join(workspace, "output")
 os.makedirs(output_dir, exist_ok=True)
@@ -17,9 +15,9 @@ print("Output dir:", output_dir)
 img1 = cv2.imread("Tiger.jpg")
 img2 = cv2.imread("Car.jpg")
 
-if img1 is None or img2 is None:
-    print("ERROR: Image read failed")
-    sys.exit(1)
+#if img1 is None or img2 is None:
+    #print("ERROR: Failed to read images")
+    #sys.exit(1)
 
 gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
