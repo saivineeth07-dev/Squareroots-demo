@@ -1,5 +1,7 @@
 import cv2
 import os
+print("WORKSPACE =", os.getenv("WORKSPACE"))
+print("CWD =", os.getcwd())
 
 def main():
     img1 = cv2.imread(r"C:\Users\saivi\Downloads\Tiger.jpg")
