@@ -33,34 +33,20 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    def status = bat(script: 'venv\\Scripts\\pytest')
+                    def status = bat(script: 'venv\\Scripts\\pytest', returnStatus: true)
                     if (status == 5) {
                         echo 'No tests found. Continuing.'
                     } else if (status != 0) {
-                        error 'Tests failed'
+                        error "Tests failed"
                     }
                 }
-            }
-        }
-
-        stage('CI Validation (NO GUI)') {
-            steps {
-                bat 'venv\\Scripts\\python -m app.main'
             }
         }
 
         stage('Run OpenCV') {
             steps {
                 bat 'echo WORKSPACE=%WORKSPACE%'
-                bat 'python app\\main.py'
-            }
-        }
-
-        stage('Inspect Workspace') {
-            steps {
-                bat 'echo WORKSPACE=%WORKSPACE%'
-                bat 'cd'
-                bat 'dir'
+                bat 'venv\\Scripts\\python -m app.main'
             }
         }
 
@@ -74,7 +60,7 @@ pipeline {
     post {
         success {
             echo 'Build Successful (CI-safe)'
-            archiveArtifacts artifacts: 'images/*.jpg'
+            archiveArtifacts artifacts: 'output/*.jpg'
         }
         failure {
             echo 'Build Failed'
