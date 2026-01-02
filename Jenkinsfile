@@ -53,7 +53,7 @@ pipeline {
         stage('Run OpenCV') {
             steps {
                 bat 'echo WORKSPACE=%WORKSPACE%'
-                bat 'python app\\main.py'
+                bat 'python app\\Annotation.py'
             }
         }
 
