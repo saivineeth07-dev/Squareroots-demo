@@ -10,7 +10,6 @@ pipeline {
             steps {
                 git branch: 'main',
                 url: 'https://github.com/saivineeth07-dev/Squareroots-demo.git'
-            //    checkout scm
             }
         }
 
