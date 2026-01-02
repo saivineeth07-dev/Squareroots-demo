@@ -12,8 +12,8 @@ os.makedirs(output_dir, exist_ok=True)
 
 print("Output dir:", output_dir)
 
-img1 = cv2.imread("Tiger1.jpg")
-img2 = cv2.imread("Car2.jpg")
+img1 = cv2.imread("Tiger.jpg")
+img2 = cv2.imread("Car.jpg")
 
 #if img1 is None or img2 is None:
     #print("ERROR: Failed to read images")
