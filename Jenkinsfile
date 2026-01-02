@@ -8,9 +8,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-             //   git branch: 'main',
-                //    url: 'https://github.com/saivineeth07-dev/Squareroots-demo.git'
-                checkout scm
+                git branch: 'main',
+                url: 'https://github.com/saivineeth07-dev/Squareroots-demo.git'
+            //    checkout scm
             }
         }
 
@@ -62,6 +62,12 @@ pipeline {
                 bat 'echo WORKSPACE=%WORKSPACE%'
                 bat 'cd'
                 bat 'dir'
+            }
+        }
+
+        stage('Verify Output') {
+            steps {
+                bat 'dir output'
             }
         }
     }
