@@ -15,10 +15,10 @@ def main():
 
     else:
         # Local mode → show window
-        cv2.imshow("grayscale image", gray1)
-        cv2.imshow("grayscale image", gray2)
-        cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\dog_gray.jpg", gray1)
-        cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\dog_gray.jpg", gray2)
+        cv2.imshow("grayscale image1", gray1)
+        cv2.imshow("grayscale image2", gray2)
+        cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\dog_gray1.jpg", gray1)
+        cv2.imwrite(r"C:\Users\saivi\OneDrive\Pictures\Screenshots\dog_gray2.jpg", gray2)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
