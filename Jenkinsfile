@@ -6,10 +6,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/saivineeth07-dev/Squareroots-demo.git'
+             //   git branch: 'main',
+                //    url: 'https://github.com/saivineeth07-dev/Squareroots-demo.git'
+                checkout scm
             }
         }
 
@@ -53,6 +54,14 @@ pipeline {
             steps {
                 bat 'echo WORKSPACE=%WORKSPACE%'
                 bat 'python app\\main.py'
+            }
+        }
+
+        stage('Inspect Workspace') {
+            steps {
+                bat 'echo WORKSPACE=%WORKSPACE%'
+                bat 'cd'
+                bat 'dir'
             }
         }
     }
