@@ -46,7 +46,7 @@ pipeline {
         stage('Run OpenCV') {
             steps {
                 bat 'echo WORKSPACE=%WORKSPACE%'
-                bat 'venv\\Scripts\\python app\\main.py'
+                bat 'venv\\Scripts\\python -m app.main'
             }
         }
 
