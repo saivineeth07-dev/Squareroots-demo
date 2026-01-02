@@ -15,9 +15,9 @@ print("Output dir:", output_dir)
 img1 = cv2.imread("Tiger1.jpg")
 img2 = cv2.imread("Car2.jpg")
 
-#if img1 is None or img2 is None:
-    #print("ERROR: Failed to read images")
-    #sys.exit(1)
+if img1 is None or img2 is None:
+    print("ERROR: Failed to read images")
+    sys.exit(1)
 
 gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
