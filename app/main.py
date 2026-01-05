@@ -1,4 +1,4 @@
-from Annotation import main
+from app.annotation import main
 
 def main():
     print("Application started")
