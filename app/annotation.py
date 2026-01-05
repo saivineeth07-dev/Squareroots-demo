@@ -23,8 +23,8 @@ def run():
     img1 = cv2.imread(img1_path)
     img2 = cv2.imread(img2_path)
 
-   # if img1 is None or img2 is None:
-       # raise FileNotFoundError("Images exist but could not be read")
+    if img1 is None or img2 is None:
+        raise FileNotFoundError("Images exist but could not be read")
 
     #print("Images loaded successfully")
     #return True
