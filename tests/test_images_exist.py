@@ -1,4 +1,5 @@
 from app.annotation import run
 
-if __name__ == "__main__":
+def test_required_images_exist():
     run()
+    
