@@ -4,8 +4,6 @@ import sys
 
 def run():
 
-    print("Application started")
-
     workspace = os.getenv("WORKSPACE", os.getcwd())
     print("WORKSPACE =", workspace)
 
