@@ -41,8 +41,11 @@ pipeline {
         }
 
         stage('Run Tests') {
-            steps {
-                bat 'venv\\Scripts\\pytest -v'
+           steps {
+                bat '''
+                set PYTHONPATH=%CD%
+                venv\\Scripts\\pytest
+                '''
             }
         }
 
