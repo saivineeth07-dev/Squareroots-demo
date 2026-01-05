@@ -39,4 +39,4 @@ def run():
     print("Saved:", out2)
 
 if __name__ == "__main__":
-    main()
+    run()
