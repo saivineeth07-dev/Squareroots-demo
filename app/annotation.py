@@ -16,7 +16,8 @@ def run():
     img1_path = os.path.join(workspace, "images", "Tiger.jpg")
     img2_path = os.path.join(workspace, "images", "Car.jpg")
 
-    if not os.path.exists(img1_path) or not os.path.exists(img2_path):
+    #if not os.path.exists(img1_path) or not os.path.exists(img2_path):
+    if img1_path is None or img2_path is None:
         raise FileNotFoundError("One or more images are missing")
 
     img1 = cv2.imread(img1_path)
