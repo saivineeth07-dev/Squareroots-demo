@@ -5,6 +5,10 @@ pipeline {
         CI = "true"
     }
 
+    options {
+        skipDefaultCheckout()
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -53,6 +57,12 @@ pipeline {
         stage('Verify Output') {
             steps {
                 bat 'dir output'
+            }
+        }
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
             }
         }
     }

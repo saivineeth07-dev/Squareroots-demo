@@ -14,12 +14,14 @@ def main():
 
     print("Output dir:", output_dir)
 
-    img1 = cv2.imread("Tiger1.jpg")
-    img2 = cv2.imread("Car2.jpg")
+    img1_path = os.path.join(workspace, "Tiger1.jpg")
+    img2_path = os.path.join(workspace, "Car2.jpg")
+
+    img1 = cv2.imread(img1_path)
+    img2 = cv2.imread(img2_path)
 
     if img1 is None or img2 is None:
-        print("ERROR: Failed to read images")
-        sys.exit(1)
+    raise FileNotFoundError("One or more images are missing")
 
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
