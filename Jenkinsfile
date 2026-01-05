@@ -10,6 +10,12 @@ pipeline {
     }
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git branch: 'main',
@@ -57,12 +63,6 @@ pipeline {
         stage('Verify Output') {
             steps {
                 bat 'dir output'
-            }
-        }
-
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()
             }
         }
     }
