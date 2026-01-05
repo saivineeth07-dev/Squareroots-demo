@@ -13,18 +13,18 @@ def run():
 
     print("Output dir:", output_dir)
 
-    img1_path = os.path.join(workspace, "images", "Tiger.jpg")
-    img2_path = os.path.join(workspace, "images", "Car.jpg")
+    img1 = os.path.join(workspace, "images", "Tiger.jpg")
+    img2 = os.path.join(workspace, "images", "Car.jpg")
 
     #if not os.path.exists(img1_path) or not os.path.exists(img2_path):
-    if img1_path is None or img2_path is None:
+    if img1 is None or img2 is None:
         raise FileNotFoundError("One or more images are missing")
 
-    img1 = cv2.imread(img1_path)
-    img2 = cv2.imread(img2_path)
+    #img1 = cv2.imread(img1_path)
+    #img2 = cv2.imread(img2_path)
 
-    if img1 is None or img2 is None:
-        raise FileNotFoundError("Images exist but could not be read")
+   # if img1 is None or img2 is None:
+       # raise FileNotFoundError("Images exist but could not be read")
 
     #print("Images loaded successfully")
     #return True
