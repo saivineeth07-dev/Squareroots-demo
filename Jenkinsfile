@@ -42,14 +42,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                script {
-                    def status = bat(script: 'venv\\Scripts\\pytest', returnStatus: true)
-                    if (status == 5) {
-                        echo 'No tests found. Continuing.'
-                    } else if (status != 0) {
-                        error "Tests failed"
-                    }
-                }
+                bat 'venv\\Scripts\\pytest -v'
             }
         }
 
