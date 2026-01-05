@@ -1,3 +1,5 @@
+from Annotation import main
+
 def main():
     print("Application started")
 
