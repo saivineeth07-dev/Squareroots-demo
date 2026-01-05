@@ -1,6 +1,7 @@
 import cv2
 import os
 import sys
+import numpy as np
 
 def run():
 
@@ -25,7 +26,7 @@ def run():
         raise FileNotFoundError("Images exist but could not be read")
 
     #print("Images loaded successfully")
-    return True
+    #return True
 
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
@@ -38,6 +39,8 @@ def run():
 
     print("Saved:", out1)
     print("Saved:", out2)
+
+    return True
 
 if __name__ == "__main__":
     run()
