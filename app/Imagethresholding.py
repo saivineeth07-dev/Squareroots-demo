@@ -5,8 +5,8 @@ def main():
     src = cv2.imread("images/Numbers.jpg", cv2.IMREAD_GRAYSCALE)
 
     if src is None:
-        print("ERROR: Source image not found")
-        return
+        raise FileNotFoundError("Source image not found")
+    #    return
 
     th, dst = cv2.threshold(src, 0, 255, cv2.THRESH_BINARY)
 
