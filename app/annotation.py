@@ -13,8 +13,8 @@ def run():
 
     print("Output dir:", output_dir)
 
-    img1_path = os.path.join(workspace, "images", "Tiger1.jpg")
-    img2_path = os.path.join(workspace, "images", "Car2.jpg")
+    img1_path = os.path.join(workspace, "images", "Tiger.jpg")
+    img2_path = os.path.join(workspace, "images", "Car.jpg")
 
     if not os.path.exists(img1_path) or not os.path.exists(img2_path):
         raise FileNotFoundError("One or more images are missing")
@@ -31,8 +31,8 @@ def run():
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
-    out1 = os.path.join(output_dir, "gray1.jpg")
-    out2 = os.path.join(output_dir, "gray2.jpg")
+    out1 = os.path.join(output_dir, "grayTiger.jpg")
+    out2 = os.path.join(output_dir, "grayCar.jpg")
 
     cv2.imwrite(out1, gray1)
     cv2.imwrite(out2, gray2)
