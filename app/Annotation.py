@@ -2,7 +2,7 @@ import cv2
 import os
 import sys
 
-def main():
+def run():
 
     print("Application started")
 
@@ -22,8 +22,11 @@ def main():
 
     if img1 is None or img2 is None:
         raise FileNotFoundError("One or more images are missing")
+
+    output_dir = os.path.join(workspace, "output")
+    os.makedirs(output_dir, exist_ok=True)
     
-    print("Images loaded successfully")
+   # print("Images loaded successfully")
 
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
