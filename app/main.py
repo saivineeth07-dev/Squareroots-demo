@@ -1,7 +1,5 @@
 from app.Annotation import run
 
-def main():
-    print("Application started")
+print("MAIN FILE LOADED")
 
-if __name__ == "__main__":
-    main()
+run()
