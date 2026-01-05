@@ -12,8 +12,8 @@ def run():
 
     print("Output dir:", output_dir)
 
-    img1_path = os.path.join(workspace, "images", "Tiger213.jpg")
-    img2_path = os.path.join(workspace, "images", "Car234.jpg")
+    img1_path = os.path.join(workspace, "images", "Tiger.jpg")
+    img2_path = os.path.join(workspace, "images", "Car.jpg")
 
     if not os.path.exists(img1_path) or not os.path.exists(img2_path):
         raise FileNotFoundError("One or more images are missing")
