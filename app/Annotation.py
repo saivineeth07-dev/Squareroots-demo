@@ -29,8 +29,8 @@ def run():
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
-    out1 = os.path.join(output_dir, "gray3.jpg")
-    out2 = os.path.join(output_dir, "gray4.jpg")
+    out1 = os.path.join(output_dir, "gray1.jpg")
+    out2 = os.path.join(output_dir, "gray2.jpg")
 
     cv2.imwrite(out1, gray1)
     cv2.imwrite(out2, gray2)
