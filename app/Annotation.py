@@ -21,7 +21,7 @@ def main():
     img2 = cv2.imread(img2_path)
 
     if img1 is None or img2 is None:
-    raise FileNotFoundError("One or more images are missing")
+        raise FileNotFoundError("One or more images are missing")
 
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
