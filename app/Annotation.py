@@ -1,3 +1,4 @@
+raise RuntimeError("ANNOTATION MODULE EXECUTED")
 import cv2
 import os
 import sys
