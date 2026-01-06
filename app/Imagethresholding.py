@@ -2,7 +2,7 @@ import cv2
 import os
 
 def main():
-    src = cv2.imread("images/Numbers2.jpg", cv2.IMREAD_GRAYSCALE)
+    src = cv2.imread("images/Numbers.jpg", cv2.IMREAD_GRAYSCALE)
 
     if src is None:
         raise FileNotFoundError("Source image not found")
